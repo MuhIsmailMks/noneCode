@@ -211,7 +211,7 @@ nav .box_animation{
 }
 
 nav .box_animation:hover p{
-    transform:  perspective(800px) rotateY(-20deg);
+    transform:  perspective(800px) rotateY(-20deg); 
 }
 
 footer .box_animation::before{
@@ -219,7 +219,7 @@ footer .box_animation::before{
 }
 
 
-.box_animation:not(.enter.box_animation):hover{
+.box_animation:not(.enter.box_animation):not(footer .box_animation):hover{
     transform: 
         perspective(300px)
         rotateY(20deg)
