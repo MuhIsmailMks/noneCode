@@ -412,39 +412,7 @@ nav ul li:hover a{
 .menu-button.active span:nth-child(3){
     margin-top: 0rem;
 }
-
-/* .menu-button span:nth-child(1) {
-    top: 0;
-}
  
-
-.menu-button span:nth-child(3) {
-    bottom: 0;
-}
-
-.menu-button.active span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 1rem;
-}
-
-.menu-button.active span:nth-child(2) {
-    width: 0%;
-}
-
-.menu-button.active span:nth-child(3) {
-    transform: rotate(-45deg);
-    bottom: .7rem;
-}
- */
-
- 
-/* .menu-button span{
-    background-color: white;
-    border: .75px solid rgba(0, 0, 0, 0.527);
-    border-radius: 10px;
-    height: 4px;
-} */
-
 
 
 /* links */
@@ -576,6 +544,11 @@ nav ul::after{
   }
   }
 
+  /* about */
+.about_stroke{  
+    -webkit-text-stroke: 5px rgb(0, 0, 0); 
+}
+
 /* footer section */
 .footer{
     background: linear-gradient(180deg, #4C95B9 0%, #C3F9FF 100%);
@@ -654,6 +627,9 @@ footer .social:hover  .icon{
         -webkit-text-stroke: .9px black;
     }
      
+    .about_stroke{  
+        -webkit-text-stroke: .5vw rgb(0, 0, 0); 
+    }
     /* footer */
     footer .box_animation p{
         -webkit-text-stroke: 1.5px black;
