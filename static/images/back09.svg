@@ -1,0 +1,20 @@
+<svg width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_667_1376" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="23">
+<rect width="30" height="22.5" fill="white"/>
+</mask>
+<g mask="url(#mask0_667_1376)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V22.5H30V0H0Z" fill="#FECA00"/>
+<mask id="mask1_667_1376" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="23">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V22.5H30V0H0Z" fill="white"/>
+</mask>
+<g mask="url(#mask1_667_1376)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V7.5H30V0H0Z" fill="#DB501C"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 15V22.5H30V15H0Z" fill="#5EAA22"/>
+<path d="M10.9191 10.5559C10.9191 10.5559 10.5705 14.127 13.7444 14.127C16.9183 14.127 16.1104 14.127 16.1104 14.127C16.1104 14.127 19.4493 13.9092 19.0616 10.5559" stroke="#DB501C" stroke-width="1.40625"/>
+<path d="M17.1093 11.0622C17.1093 12.2272 16.1649 13.1716 14.9999 13.1716C13.835 13.1716 12.8906 12.2272 12.8906 11.0622C12.8906 9.89725 13.835 8.95285 14.9999 8.95285C16.1649 8.95285 17.1093 9.89725 17.1093 11.0622Z" fill="#FECA00" stroke="#68B9E8" stroke-width="1.40625"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.9999 11.2499C15.5177 11.2499 15.9374 10.8302 15.9374 10.3124C15.9374 9.79464 15.5177 9.37491 14.9999 9.37491C14.4822 9.37491 14.0624 9.79464 14.0624 10.3124C14.0624 10.8302 14.4822 11.2499 14.9999 11.2499Z" fill="#DB501C"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.0936 12.7499C15.9738 12.7499 16.6873 12.4141 16.6873 11.9999C16.6873 11.5857 15.9738 11.2499 15.0936 11.2499C14.2134 11.2499 13.4998 11.5857 13.4998 11.9999C13.4998 12.4141 14.2134 12.7499 15.0936 12.7499Z" fill="#5EAA22"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.0934 9.37482C16.3361 9.37482 17.3434 9.03903 17.3434 8.62482C17.3434 8.2106 16.3361 7.87482 15.0934 7.87482C13.8508 7.87482 12.8434 8.2106 12.8434 8.62482C12.8434 9.03903 13.8508 9.37482 15.0934 9.37482Z" fill="#674F28"/>
+</g>
+</g>
+</svg>
