@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Poppins", serif;
+    background-color: #FFFFFF;
+}
+
+/* utils */
+.font_Xlarge{
+    font-size: 40px;
+}
+
+.font_large{
+    font-size: 21px;
+}
+
+.font_lmedium{
+    font-size: 18px;
+}
+
+.font_medium{
+    font-size: 16px;
+}
+
+.font_small{
+    font-size: 14px;
+}
+
+.flex_alignCenter{
+    display: flex; 
+    align-items: center;
+}
+
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex_between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex_col{
+    display: flex;
+    flex-direction: column;
+}
+
+.medium_gap{
+    gap: 16px;
+}
+
+.Xsmallgap{
+    gap: 10px;
+}
+
+.smallgap{
+    gap: 8px;
+}
+
+.optionTitle{
+    font-size: 16px;
+    font-weight: 500;
+    color: #101928;
+    text-align: left;
+    width: 100%;
+}
+
+input[type="radio"] { 
+    display: none;
+}
+
+/* styling */
+.container{
+    position: relative;
+    height: auto;
+    width:  95%;
+
+    display: flex;
+    justify-content: center;
+    align-items: start; 
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+    gap: 70px;
+}
+
+.container .productSetting{
+    width: 45%;
+    gap: 32px;
+}
+
+.container .imageProduct{
+    width: 50%;
+}
+
+
+/* productSetting */ 
+.aboutProduct{
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.aboutProduct h1{
+    font-weight: 600;
+}
+
+.aboutProduct p{
+    color: #000000CC;
+}
+
+
+/* reviews */
+.starsContainer img{
+    width: 24px;
+    height: auto;
+    object-fit: contain;
+}
+
+.starsContainer .empty_stars{
+    position: absolute;
+    filter: grayscale(100%);
+}
+
+.starsContainer .starsReview{
+    position: relative;
+    z-index: 10;
+}
+
+.amoutReviews p{
+    color: #00000080;
+}
+
+
+/* keyring_Colour */ 
+  .color-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+ 
+
+ .keyring_Colour label:not(.rainbow label){
+    border: 2px solid #C5C5C5;
+ }
+
+ .keyring_Colour label{
+    width: auto;
+    padding: 0 10px;
+    height: 48px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyring_Colour .rainbow{
+      border: none;
+      position: relative;
+
+      background: linear-gradient(267.49deg, #9400D3 -16.28%, #4B0082 3.62%, #0000FF 26.73%, #00FF00 47.28%, #FFFF00 67.82%, #FF7F00 91.57%, #FF0000 112.12%);
+ 
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+
+      display: flex;
+      justify-content: end;
+      align-items: center;
+}
+
+.rainbow::before{
+    content: "";
+    position: absolute;
+    width: 98%;
+    height: 95%;
+    top: 1.5px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    background-color: white;
+} 
+
+.rainbow .tick{
+    background-color: blac !important;
+}
+
+.rainbow label{
+    position: relative;
+    border: 2px solid #C5C5C5;
+}
+
+.keyring_Colour input[type="radio"]:checked:not(.rainbow)  + label{
+    border-color: var(--Clr);  
+}
+
+.keyring_Colour .rainbow input[type="radio"]:checked +  label{
+    border:none;  
+}
+
+
+
+input[type="radio"]:checked + .color-circle {
+    border-color: black;
+}
+ 
+.keyringColorContainer{
+    flex-wrap: wrap;
+}
+
+.keyringColorContainer .color-option .tick{
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    height: 16.25px;
+    width: 16.25px;
+    background-color: var(--Clr);
+    border: 2px solid #FFFFFF;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 8px;
+    color: white;
+}
+
+.keyringColorContainer .color-option.rainbow .tick{
+    background-color: red;
+}
+
+.keyring_Colour input[type="radio"]:checked ~ .tick{
+    display: flex;
+}
+
+/* inputOption */ 
+.inputOption{
+    border: none;
+    padding: 15px 20px;
+    color: black;
+    background-color: #F9FAFB;
+    border: 1px solid #E5E5E5;
+    
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+} 
+
+.inputOption:focus{
+    border: 1px solid grey;
+    outline: none;
+}
+
+/* frontside */
+.front-option{
+    width: 40px;
+    height: 29px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.optionFrontSide{
+    flex-wrap: wrap;
+}
+
+.front-option img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #D6D6D6;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+}
+
+.front-option .tick{
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center; 
+    font-size: 9px;
+    width: 16px;
+    height: 16px;
+    color: white;
+    background-color: black;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px; 
+
+    top: 10%;
+}
+
+.front-option input[type="radio"]:checked ~ label img{
+    border: 1px solid #000000; 
+}
+
+.front-option input[type="radio"]:checked ~ .tick{
+    display: flex;
+}
+
+/* dropdown */
+.backSide{
+    width: 100%;
+
+    align-items: center;
+}
+
+.dropBtn{
+    width: 100%;
+    border: 1px solid #E5E5E5;
+    padding: 0 10px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.backSide button{
+    height: 40px;
+    width: 40px;
+    border: none;
+    background-color: transparent;
+}
+
+.dropdown-container{
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+     background-color: #F9FAFB;
+    transition:.4s ease-in-out ;
+    -webkit-transition:.4s ease-in-out ;
+    -moz-transition:.4s ease-in-out ;
+    -ms-transition:.4s ease-in-out ;
+    -o-transition:.4s ease-in-out ;
+}
+
+.dropdown-container.active{
+    height: 217px;
+    border: 1px solid #E5E5E5;
+}
+
+.dropIcon{
+    transition: .3s ease-in;
+    -webkit-transition: .3s ease-in;
+    -moz-transition: .3s ease-in;
+    -ms-transition: .3s ease-in;
+    -o-transition: .3s ease-in;
+}
+
+.dropIcon.active{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.dropdown-container a{
+    border: 1px solid #E5E5E5;  
+    padding: 10px;
+    font-size: 14px;
+    color: #101928;
+    text-decoration: none;
+}
+
+.backSide .submitBtn{
+    width: 100%;
+    max-width: 600px;
+    background-color: black;
+    height: 48px;
+    color: white;
+    text-align: center;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+
+    cursor: pointer;
+    margin-top: 10px;
+
+}
+
+/* price */
+.addsPrice{
+    width: 100%;
+    height: 79px;
+    position: relative;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    border: 1px solid #000000;
+
+    padding: 10px 18px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.addsPrice .description p{
+    color: #10192899;
+}
+
+.addsPrice .price span{
+    background: linear-gradient(180deg, #FFE056 0%, #FEC20A 100%);
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+
+    font-size: 11.5px;
+    padding: 4.25px 9.41px;
+    font-weight: 500;
+}
+
+
+
+/* image products */
+.imageProduct{
+    align-items: center;
+}
+
+.imagesFrame{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+
+    width: 100%;
+    height: 549px;
+
+    /* background-color: red; */
+    background-image: url('./static/images/bgImage.png');
+    background-position: center;
+    background-size: cover;
+
+  
+}
+
+.imagesFrame::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+      background: linear-gradient(90deg, #F9F9F9 0%, rgba(247, 247, 253, 0.2) 100%);
+}
+
+.imagesFrame .imageFront,
+.imagesFrame .imageBack{
+    width: 498px; 
+    max-width: 90%;
+    position: relative;
+    z-index: 10;
+}
+
+.imageFrontBackContainer{
+    width: 100%;
+    position: relative;
+    height: 116px;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+
+    border: 4px solid #000000;
+    background: #FEC20A;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageText{
+    font-size: 56px;
+}
+
+.imageChoiseContainer{
+    width: 100%;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.imageChoiseContainer .imageChoise{
+    width: 92.33px;
+    height: 91px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 9px;
+    cursor: pointer;
+
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    -ms-border-radius: 9px;
+    -o-border-radius: 9px;
+}
+
+.imageChoiseContainer .imageChoise img{
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    transition: .2s ease-in;
+    -webkit-transition: .2s ease-in;
+    -moz-transition: .2s ease-in;
+    -ms-transition: .2s ease-in;
+    -o-transition: .2s ease-in;
+}
+
+
+
+.imageChoiseContainer .imageChoise:hover img{
+    transform:scale(0.8) ;
+    -webkit-transform:scale(0.8) ;
+    -moz-transform:scale(0.8) ;
+    -ms-transform:scale(0.8) ;
+    -o-transform:scale(0.8) ;
+}
+
+
+
+
+/* responsive media queries */
+@media screen and (min-width:1500px) {
+    .container .productSetting{
+        width: 551px;
+    }
+    
+    .container .imageProduct{
+        width: 678px;
+    }
+}
+
+@media screen and (max-width:1324px) {
+    .container{
+        flex-direction: column-reverse;
+    }
+
+    .container .imageProduct,
+    .container .productSetting{
+       width: 100%;
+    }
+}
+
+@media screen and (max-width:500px){
+    .container{
+        max-width: 100%;
+    }
+
+    .imageFrontBackContainer{
+        height: 80px;
+    }
+
+    .imageText{
+        font-size: 30px;
+    }
+
+    .imageChoiseContainer .imageChoise {
+        width: 52.33px;
+        height: 51px;
+    }
+
+    .imagesFrame{
+        height: 450px;
+    }
+}
+
+.hidden{
+    display: none;
+}
