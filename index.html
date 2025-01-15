@@ -12,7 +12,7 @@
 
       <div class="productSetting flex_col">
 
-        <div class="aboutProduct flex_col medium_gap">
+        <section class="aboutProduct flex_col medium_gap">
           <h1 class="font_Xlarge">Product Name</h1>
           <p class="font_lmedium">
             Effortlessly elevate your social credibility with our powerful
@@ -24,36 +24,36 @@
 
               <div class="empty_stars flex_center smallgap">
                 <div class="star">
-                    <img src="./static/images/star.svg" alt="starIcon">
+                    <img src="./static/images/star.svg" alt="star Icon">
                 </div>
                 <div class="star">
-                    <img src="./static/images/star.svg" alt="starIcon">
+                    <img src="./static/images/star.svg" alt="star Icon">
                 </div>
                 <div class="star">
-                    <img src="./static/images/star.svg" alt="starIcon">
+                    <img src="./static/images/star.svg" alt="star Icon">
                 </div>
                 <div class="star">
-                    <img src="./static/images/star.svg" alt="starIcon">
+                    <img src="./static/images/star.svg" alt="star Icon">
                 </div>
                 <div class="star">
-                    <img src="./static/images/star.svg" alt="starIcon">
+                    <img src="./static/images/star.svg" alt="star Icon">
                 </div>
               </div>
               <div class="starsReview flex_center smallgap">
                 <div class="star">
-                    <img src="./static/images/star.svg" alt="starIcon">
+                    <img src="./static/images/star.svg" alt="star Icon">
                 </div>
                 <div class="star">
-                    <img src="./static/images/star.svg" alt="starIcon">
+                    <img src="./static/images/star.svg" alt="star Icon">
                 </div>
                 <div class="star">
-                    <img src="./static/images/star.svg" alt="starIcon">
+                    <img src="./static/images/star.svg" alt="star Icon">
                 </div>
                 <div class="star">
-                    <img src="./static/images/star.svg" alt="starIcon">
+                    <img src="./static/images/star.svg" alt="star Icon">
                 </div>
                 <div class="star">
-                    <img src="./static/images/star.svg" alt="starIcon">
+                    <img src="./static/images/star.svg" alt="star Icon">
                 </div>
               </div>
 
@@ -64,79 +64,82 @@
             </div>
 
           </div>
-        </div>
+        </section>
 
-        <div class="keyring_Colour flex_col medium_gap">
+        <form action="/submit" method="post" class="flex_col">
+        
+        <section class="keyring_Colour flex_col medium_gap">
             <h5 class="optionTitle">Keyring Colour</h5>
            
             <div class="keyringColorContainer flex_alignCenter Xsmallgap">
 
-                <div class="color-option" style="--Clr:#c0c0c0 ;">
-                    <input type="radio" id="Silver" name="keyring-color" value="Silver">
-                    <label  for="Silver"> 
-                      Silver
-                    </label>
-                    <div class="tick">✔</div>
-                  </div>
-                   
-                  <div class="color-option" style="--Clr:black;" >
-                    <input type="radio" id="black" name="keyring-color" value="Black">
-                    <label for="black"> 
-                      Black
-                    </label>
-                    <div class="tick">✔</div>
-                  </div>
-                   
-                  <div class="color-option" style="--Clr:#ffd700 ;">
-                    <input type="radio" id="Gold" name="keyring-color" value="Gold">
-                    <label  for="Gold"> 
-                      Gold
-                    </label>
-                     <div class="tick">✔</div>
-                    
-                  </div>
-                   
-                  <div class="color-option" style="--Clr:#ff007f ;">
-                    <input type="radio" id="Rose" name="keyring-color" value="Rose">
-                    <label  for="Rose"> 
-                      Rose
-                    </label>
-                     <div class="tick">✔</div>
-                  </div>
-                   
-                  <div class="color-option rainbow">
-                    <input type="radio" id="Rainbow" name="keyring-color" value="Rainbow">
-                    <label for="Rainbow"> 
-                      Rainbow
-                    </label>
-                     <div class="tick">✔</div>
-                  </div>
-                   
-                  <div class="color-option" style="--Clr:#53565A ;">
-                    <input type="radio" id="Gunmetal" name="keyring-color" value="Gunmetal">
-                    <label  for="Gunmetal"> 
-                      Gunmetal
-                    </label>
-                     <div class="tick">✔</div>
-                  </div>
+              <div class="color-option" style="--Clr:#c0c0c0 ;">
+                  <input type="radio" id="Silver" name="keyring-color" value="Silver">
+                  <label for="Silver"> 
+                    Silver
+                  </label>
+                  <div class="tick">✔</div>
+                </div>
+                 
+                <div class="color-option" style="--Clr:black;" >
+                  <input type="radio" id="Black" name="keyring-color" value="Black">
+                  <label for="Black"> 
+                    Black
+                  </label>
+                  <div class="tick">✔</div>
+                </div>
+                 
+                <div class="color-option" style="--Clr:#ffd700 ;">
+                  <input type="radio" id="Gold" name="keyring-color" value="Gold">
+                  <label for="Gold"> 
+                    Gold
+                  </label>
+                   <div class="tick">✔</div>
+                  
+                </div>
+                 
+                <div class="color-option" style="--Clr:#ff007f ;">
+                  <input type="radio" id="Rose" name="keyring-color" value="Rose">
+                  <label for="Rose"> 
+                    Rose
+                  </label>
+                   <div class="tick">✔</div>
+                </div>
+                 
+                <div class="color-option rainbow">
+                  <input type="radio" id="Rainbow" name="keyring-color" value="Rainbow">
+                  <label for="Rainbow"> 
+                    Rainbow
+                  </label>
+                   <div class="tick">✔</div>
+                </div>
+                 
+                <div class="color-option" style="--Clr:#53565A ;">
+                  <input type="radio" id="Gunmetal" name="keyring-color" value="Gunmetal">
+                  <label for="Gunmetal"> 
+                    Gunmetal
+                  </label>
+                   <div class="tick">✔</div>
+                </div>
 
-            </div>
+          </div>
 
-        </div>
+        </section>
 
-        <div class="front flex_col smallgap">
+        <section class="front flex_col smallgap">
           <h5 class="optionTitle">Front</h5>
           <input
           type="text"
-          id="name"
-          name="name"
+          id="frontName"
+          name="front-name" 
           class="inputOption font_medium"
           required
+          minlength="3" 
           placeholder="Ex. 223411"
       />
-        </div>
+        </section>
 
-        <div class="frontSide flex_col smallgap">
+        <section class="frontSide flex_col smallgap">
           <h5 class="optionTitle">Front Side Style</h5>
       
           <div class="optionFrontSide flex_alignCenter Xsmallgap">
@@ -231,46 +234,65 @@
 
           </div>
 
-        </div>
+        </section>
 
-        <div class="back flex_col smallgap">
+        <section class="back flex_col smallgap">
           <h5 class="optionTitle">Back</h5>
           <input
           type="text"
-          id="name"
+          id="backName"
           name="name"
           class="inputOption font_medium"
           required
           placeholder="Ex. 223411"
-      />
-        </div>
+       />
+        </section>
 
-        <div class="backSide dropdown flex_col">
+        <section class="backSide dropdown flex_col">
 
           <h5 class="optionTitle">Back Side Style</h5>
 
           <div class="flex_between dropBtn">
             <p class="font_medium textChoise">Same as Front</p>
-            <button class="flex_center">
+            <button class="flex_center" aria-expanded="false">
               <img src="./static/images/dropIcon.svg" alt="dropIcon" class="dropIcon">
             </button>
           </div>
 
           <div class="dropdown-container flex_col">
-            <a href="#">Same as front</a>
-            <a href="#">Number Plate</a>
-            <a href="#">Image Upload</a>
-            <a href="">Text</a>
-            <a href="">Flag</a>
+            <label>
+              <input type="radio" name="sameAsFront" value="sameAsFront" />
+              Same as Front
+            </label>
+            <label>
+              <input type="radio" name="numberPlate" value="numberPlate" />
+              Number Plate
+            </label>
+            <label>
+              <input type="radio" name="imageUpload" value="imageUpload" />
+              Image Upload
+            </label>
+            <label>
+              <input type="radio" name="text" value="text" />
+              Text
+            </label>
+            <label>
+              <input type="radio" name="flag" value="flag" />
+              Flag
+            </label>
           </div>
 
-          <button type="submit" class="font_medium submitBtn">
-            SUBMIT
-          </button>
+      
 
+        </section>
+
+        <div class="submit-container">
+          <button type="submit" class="font_medium submitBtn">SUBMIT</button>
         </div>
 
-        <div class="adds">
+        </form>
+
+        <section class="adds">
           <h5 class="optionTitle">Adds On</h5>
           <div class="addsPrice flex_col">
             <div class="price flex_alignCenter Xsmallgap">
@@ -281,7 +303,7 @@
               <p class="font_small">Descriptions here..</p>
             </div>
           </div>
-        </div>
+        </section>
 
       </div>
 

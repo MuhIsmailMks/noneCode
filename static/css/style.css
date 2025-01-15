@@ -82,6 +82,11 @@ input[type="radio"] {
     display: none;
 }
 
+form{
+    gap: 34px;     
+}
+
+
 /* styling */
 .container{
     position: relative;
@@ -145,14 +150,20 @@ input[type="radio"] {
 
 
 /* keyring_Colour */ 
-  .color-option {
+
+ .keyringColorContainer .color-option {
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
     position: relative;
+    z-index: 10;
   }
  
+  form  label,
+form  input {
+    cursor: pointer;  
+}
 
  .keyring_Colour label:not(.rainbow label){
     border: 2px solid #C5C5C5;
@@ -353,7 +364,7 @@ input[type="radio"]:checked + .color-circle {
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
 
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 .backSide button{
@@ -399,7 +410,8 @@ input[type="radio"]:checked + .color-circle {
     -o-transform: rotate(180deg);
 }
 
-.dropdown-container a{
+.dropdown-container a,
+.dropdown-container label{
     border: 1px solid #E5E5E5;  
     padding: 10px;
     font-size: 14px;
@@ -407,7 +419,7 @@ input[type="radio"]:checked + .color-circle {
     text-decoration: none;
 }
 
-.backSide .submitBtn{
+.submitBtn{
     width: 100%;
     max-width: 600px;
     background-color: black;
@@ -419,10 +431,17 @@ input[type="radio"]:checked + .color-circle {
     -moz-border-radius: 100px;
     -ms-border-radius: 100px;
     -o-border-radius: 100px;
-
     cursor: pointer;
     margin-top: 10px;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+}
 
+.backSide .submitBtn:hover{
+    opacity: 0.9;
 }
 
 /* price */
@@ -582,6 +601,12 @@ input[type="radio"]:checked + .color-circle {
     .container .imageProduct{
         width: 678px;
     }
+
+    
+    .rainbow::before{ 
+        width: 97%;
+        height: 94%;
+    }
 }
 
 @media screen and (max-width:1324px) {
@@ -593,6 +618,7 @@ input[type="radio"]:checked + .color-circle {
     .container .productSetting{
        width: 100%;
     }
+
 }
 
 @media screen and (max-width:500px){

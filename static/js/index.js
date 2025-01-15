@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     dropIcon.classList.toggle('active');
   });
 
-  const dropdownLinks = document.querySelectorAll('.dropdown-container a'); // Semua elemen <a> dalam dropdown
-  const textChoise = document.querySelector('.textChoise'); // Elemen tempat teks ditampilkan
+  const dropdownLinks = document.querySelectorAll('.dropdown-container label');  
+  const textChoise = document.querySelector('.textChoise');  
 
   dropdownLinks.forEach(link => {
     link.addEventListener('click', (event) => {
-      event.preventDefault(); // Cegah aksi default link
-      textChoise.textContent = link.textContent; // Ganti teks dalam elemen textChoise
+      event.preventDefault(); 
+      textChoise.textContent = link.textContent;  
     });
   });
 });
