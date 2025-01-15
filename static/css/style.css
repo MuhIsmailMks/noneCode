@@ -479,7 +479,7 @@ input[type="radio"]:checked + .color-circle {
     height: 549px;
 
     /* background-color: red; */
-    background-image: url('./static/images/bgImage.png');
+    background-image: url('../images/bgImage.png');
     background-position: center;
     background-size: cover;
 
