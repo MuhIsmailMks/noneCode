@@ -390,7 +390,7 @@ input[type="radio"]:checked + .color-circle {
 }
 
 .dropdown-container.active{
-    height: 217px;
+    height: 217px; 
     border: 1px solid #E5E5E5;
 }
 
@@ -641,6 +641,10 @@ input[type="radio"]:checked + .color-circle {
 
     .imagesFrame{
         height: 450px;
+    }
+
+    .dropdown-container.active{
+        height: 214px; 
     }
 }
 
