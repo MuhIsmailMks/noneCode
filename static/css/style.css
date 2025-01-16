@@ -170,9 +170,14 @@ form{
     z-index: 10;
   }
  
-  form  label,
+form  label,
 form  input {
     cursor: pointer;  
+}
+
+textarea{
+    width: 100%;
+    height: 150px;resize: vertical; 
 }
 
  .keyring_Colour label:not(.rainbow label){
@@ -539,12 +544,7 @@ input[type="radio"]:checked + .color-circle {
     gap: 40px;
 
     width: 100%;
-    height: 549px;
-
-    /* background-color: red; */
-    /* background-image: url('../images/bgImage.png');
-    background-position: center;
-    background-size: cover;   */
+    height: 549px; 
 }
 
 .imageBgFrame{
@@ -612,6 +612,7 @@ input[type="radio"]:checked + .color-circle {
 }
 
 .imageBack.sameFront .imageFrontBackContainer img,
+.imageBack.sameSize .imageFrontBackContainer img,
 .imageFront .imageFrontBackContainer img{
     height: 110%;
     left: -10px;
@@ -623,13 +624,7 @@ input[type="radio"]:checked + .color-circle {
     width: 100%;
     object-fit: contain;  
 }
-
-/* .imageBack.sameFront.imageFrontBackContainer img{
-    height: auto;
-    width: 100%;
-    object-fit: contain;  
-} */
-
+ 
 
 .imageFrontBackContainer::before{
     content: "";
@@ -648,19 +643,27 @@ input[type="radio"]:checked + .color-circle {
     height: 100%;
     position: absolute;
     z-index: 1;
-    border-radius: inherit;
-    -webkit-border-radius: inherit;
-    -moz-border-radius: inherit;
-    -ms-border-radius: inherit;
-    -o-border-radius: inherit; 
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 
 .imageFrontBackContainer.rainbowBorder .bgImageClr{
     width: 98.7%;
     height: 96.5%;
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
 }
 
+.imageFrontBackContainer.rainbowBorder::before{
+
+}
 .imageFrontBackContainer.rainbowBorder::before{
     display: block;
 }
@@ -670,6 +673,13 @@ input[type="radio"]:checked + .color-circle {
     position: relative;
     z-index: 19;
     font-family: 'CharlesWright', sans-serif;
+    white-space: nowrap; 
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.imageBack .imageText.normalFont{
+    font-size: 56px !important;
 }
 
 .imageChoiseContainer{
@@ -708,8 +718,6 @@ input[type="radio"]:checked + .color-circle {
     -o-transition: .2s ease-in;
 }
 
-
-
 .imageChoiseContainer .imageChoise:hover img{
     transform:scale(0.8) ;
     -webkit-transform:scale(0.8) ;
@@ -718,6 +726,47 @@ input[type="radio"]:checked + .color-circle {
     -o-transform:scale(0.8) ;
 }
 
+.colorBack{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: var(--clr);
+    border: 1px solid rgb(170, 170, 170); 
+    cursor: pointer;
+}
+
+/* data-hover="White"  dataHover*/
+/* Yellow + Union Jack */
+
+.dataHover:hover::after {
+    content: attr(data-hover); 
+    position: absolute;
+    top: -35px;  
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: #fff;
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+.colorBack:hover{
+    border: 4px solid black; 
+}
+
+.backgroundBack{
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
 .submit-container{
     width: 100%;
@@ -762,6 +811,10 @@ input[type="radio"]:checked + .color-circle {
 
     .imageText{
         font-size: 30px;
+    }
+
+    .imageBack .imageText.normalFont{
+        font-size: 30px !important;
     }
 
     .imageChoiseContainer .imageChoise {

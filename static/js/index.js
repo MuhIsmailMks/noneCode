@@ -60,12 +60,20 @@ swiperImages.forEach(image => {
   });
 });
 
+// colors flag
+const colorMap = {
+  yellow: '#FECF03',
+  white: '#FFFFFF',
+  black: '#000000',
+};
 
 
 // back image 
 const radioButtonsBack = document.querySelectorAll('input[name="back-style"]'); 
+const backImgBtns = document.querySelectorAll('input[name="back-img"]'); 
 const previewImageBack = document.getElementById('previewImageBack');
  
+// flag
 radioButtonsBack.forEach((radio) => {
   radio.addEventListener('change', () => {
     previewImageBack.classList.add('active');
@@ -74,18 +82,28 @@ radioButtonsBack.forEach((radio) => {
     previewImageBack.src = newImageSrc; 
   });
 });
+ 
+// back image 2
+backImgBtns.forEach((radioBtn) => {
+  radioBtn.addEventListener('change', () => {
+    previewImageBack.classList.add('active');
+    const selectedValue = radioBtn.value;  
+    const selectedColor = radioBtn.classList[0];  
+    console.log(selectedValue);
+    
+    const newImageSrc = `./static/images/${selectedValue}.svg`; 
+    previewImageBack.src = newImageSrc; 
+
+    const newColor = colorMap[selectedColor] || '';
+    previewImageBackContainer.style.backgroundColor = newColor;
+  });
+});
 
 // front image 
 const radioButtons = document.querySelectorAll('input[name="front-style"]');
 const previewImageFront = document.getElementById('previewImageFront');
 const previewImageFrontContainer = document.querySelector('.imageFront .imageFrontBackContainer .bgImageClr');
  
-
-const colorMap = {
-  yellow: '#FECF03',
-  white: '#FFFFFF',
-  black: '#000000',
-};
 
 radioButtons.forEach((radio) => {
   radio.addEventListener('change', () => {
@@ -109,6 +127,7 @@ radioButtons.forEach((radio) => {
     if (imageBack.className.includes('sameFront')) {
       previewImageBackContainer.style.backgroundColor = newColor;
     }
+
   });
 });
 
@@ -146,6 +165,25 @@ colorOptions.forEach((clrOption) => {
 });
 
 
+// text
+const textarea = document.getElementById('inputText');
+const output = document.querySelector('.imageBack #imageText');
+const maxFontSize = 56;  
+const minFontSize = 1;  
+textarea.addEventListener('input', function() {
+  const text = textarea.value;
+  output.textContent = text;
+ 
+  imageBackText.classList.remove('normalFont')
+  let fontSize = maxFontSize;
+  output.style.fontSize = fontSize + 'px';
+
+  while (output.scrollWidth > output.clientWidth && fontSize > minFontSize) {
+    fontSize -= 1;  
+    output.style.fontSize = fontSize + 'px';
+  }
+});
+
 
 // backside option
 const dropdownBtns = document.querySelectorAll('.dropdown-container label'); 
@@ -154,6 +192,7 @@ const targetDivs = document.querySelectorAll('.backsideoption');
 dropdownBtns.forEach((dropdown) => { 
     dropdown.addEventListener('click', () => {
         const valueOnput = dropdown.querySelector('input');
+        imageBackText.classList.add('normalFont')
         const selectedValue = valueOnput.value;
        console.log(selectedValue);
        
@@ -177,7 +216,19 @@ dropdownBtns.forEach((dropdown) => {
             element.classList.remove('active');
            });
         }
+        // end same front
          
+        
+        // numberPlate
+        if(selectedValue === 'numberPlate'){ 
+          imageBack.classList.add('sameSize'); 
+        }
+
+        if(selectedValue !== 'numberPlate'){ 
+          imageBack.classList.remove('sameSize'); 
+        }
+
+        // all div
         document.querySelectorAll(`.${selectedValue}, .${selectedValue}.backsideoption`).forEach((element) => {
             element.classList.add('active');
             if (selectedValue !== 'sameFront') {
@@ -190,3 +241,39 @@ dropdownBtns.forEach((dropdown) => {
     });
 });
  
+
+
+// upload image
+const imageInput = document.getElementById('imageInput');
+const previewImage2 = document.getElementById('previewImageBack');
+
+imageInput.addEventListener('change', function(event) {
+  const file = event.target.files[0];  
+
+  if (file) {
+    const reader = new FileReader();
+ 
+    previewImageBack.classList.add('active');
+    reader.onload = function(e) {
+      previewImage2.src = e.target.result; 
+      previewImage2.style.display = 'block'; 
+    };
+
+    reader.readAsDataURL(file);  
+  }
+});
+
+
+
+
+// change background
+const colorBackElements = document.querySelectorAll('.colorBack'); 
+const bgImageClr = document.querySelector('.imageBack .bgImageClr');
+ 
+colorBackElements.forEach((colorBack) => {
+  colorBack.addEventListener('click', () => { 
+    const color = colorBack.style.getPropertyValue('--clr');
+     
+    bgImageClr.style.backgroundColor = color;
+  });
+});
