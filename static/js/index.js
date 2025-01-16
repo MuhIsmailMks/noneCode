@@ -164,17 +164,28 @@ colorOptions.forEach((clrOption) => {
   });
 });
 
-
 // text
 const textarea = document.getElementById('inputText');
 const output = document.querySelector('.imageBack #imageText');
-const maxFontSize = 56;  
+let maxFontSize = 56;  
 const minFontSize = 1;  
+
+// Function untuk mengupdate maxFontSize berdasarkan ukuran layar
+function updateMaxFontSize() {
+  maxFontSize = window.innerWidth < 1000 ? 30 : 56;
+}
+
+// Jalankan saat halaman dimuat
+updateMaxFontSize();
+
+// Perbarui maxFontSize jika ukuran layar berubah
+window.addEventListener('resize', updateMaxFontSize);
+
 textarea.addEventListener('input', function() {
   const text = textarea.value;
-  output.textContent = text;
- 
-  imageBackText.classList.remove('normalFont')
+  output.textContent = text; 
+  
+  imageBackText.classList.remove('normalFont');
   let fontSize = maxFontSize;
   output.style.fontSize = fontSize + 'px';
 
@@ -183,6 +194,7 @@ textarea.addEventListener('input', function() {
     output.style.fontSize = fontSize + 'px';
   }
 });
+
 
 
 // backside option
