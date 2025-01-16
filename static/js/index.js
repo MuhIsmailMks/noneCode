@@ -20,6 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+// back
+const backNameInput = document.querySelector('#backName');
+const imageBack = document.querySelector('.imageBack');
+const imageBackText = imageBack.querySelector('.imageText');
+const previewImageBackContainer = document.querySelector('.imageBack .imageFrontBackContainer .bgImageClr');
+
+backNameInput.addEventListener('input', (event) => {
+  const newValue = event.target.value;  
+  imageBackText.textContent = newValue || "YOUR REG";  
+});
+
+
 // front
 const frontNameInput = document.querySelector('#frontName');
 const imageFront = document.querySelector('.imageFront ');
@@ -28,18 +41,12 @@ const imageFrontText = imageFront.querySelector('.imageText');
 
 frontNameInput.addEventListener('input', (event) => {
   const newValue = event.target.value;  
-  imageFrontText.textContent = newValue || "YOUR REG";  
-});
+  imageFrontText.textContent = newValue || "YOUR REG";
 
-// back
-const backNameInput = document.querySelector('#backName');
-const imageBack = document.querySelector('.imageBack');
-const imageBackText = imageBack.querySelector('.imageText');
+  if (imageBack.className.includes('sameFront')){
+    imageBackText.textContent = newValue || "YOUR REG";
+  }
 
-
-backNameInput.addEventListener('input', (event) => {
-  const newValue = event.target.value;  
-  imageBackText.textContent = newValue || "YOUR REG";  
 });
 
 // bgImageFrame 
@@ -50,16 +57,35 @@ const bgImage = document.getElementById('imageBgFrame');
 swiperImages.forEach(image => {
   image.addEventListener('click', () => { 
     bgImage.src = image.src;
-
   });
 });
 
 
+
+// back image 
+const radioButtonsBack = document.querySelectorAll('input[name="back-style"]'); 
+const previewImageBack = document.getElementById('previewImageBack');
+ 
+radioButtonsBack.forEach((radio) => {
+  radio.addEventListener('change', () => {
+    previewImageBack.classList.add('active');
+    const selectedValue = radio.value;  
+    const newImageSrc = `./static/images/${selectedValue}.svg`; 
+    previewImageBack.src = newImageSrc; 
+  });
+});
+
 // front image 
 const radioButtons = document.querySelectorAll('input[name="front-style"]');
 const previewImageFront = document.getElementById('previewImageFront');
-const previewImageFrontContainer = document.querySelector('.imageFront .imageFrontBackContainer');
+const previewImageFrontContainer = document.querySelector('.imageFront .imageFrontBackContainer .bgImageClr');
  
+
+const colorMap = {
+  yellow: '#FECF03',
+  white: '#FFFFFF',
+  black: '#000000',
+};
 
 radioButtons.forEach((radio) => {
   radio.addEventListener('change', () => {
@@ -70,30 +96,55 @@ radioButtons.forEach((radio) => {
     // Update the image
     const newImageSrc = `./static/images/${selectedValue}.svg`;
     previewImageFront.src = newImageSrc;
- 
-    if (selectedColor === 'yellow') {
-      previewImageFrontContainer.style.backgroundColor = '#FFD700';  
-    } else if (selectedColor === 'white') {
-      previewImageFrontContainer.style.backgroundColor = '#FFFFFF';  
-    } else if (selectedColor === 'black') {
-      previewImageFrontContainer.style.backgroundColor = '#000000';  
-    } else {
-      previewImageFrontContainer.style.backgroundColor = '';  
-    }
 
+    if (imageBack.className.includes('sameFront')) {
+      previewImageBack.classList.add('active');
+      previewImageBack.src = newImageSrc;
+    } 
+
+    // Update background color
+    const newColor = colorMap[selectedColor] || '';
+    previewImageFrontContainer.style.backgroundColor = newColor;
+
+    if (imageBack.className.includes('sameFront')) {
+      previewImageBackContainer.style.backgroundColor = newColor;
+    }
   });
 });
 
 
-// back image 
-const radioButtonsBack = document.querySelectorAll('input[name="back-style"]');
-const previewImageBack = document.getElementById('previewImageBack');
+
+
+// border key
+const colorOptions = document.querySelectorAll('input[name="keyring-color"]');
+const borderImgFrontContainer = document.querySelector('.imageFront .imageFrontBackContainer'); 
+const borderImgBackContainer = document.querySelector('.imageBack .imageFrontBackContainer'); 
  
-radioButtonsBack.forEach((radio) => {
-  radio.addEventListener('change', () => {
-    const selectedValue = radio.value;  
-    const newImageSrc = `./static/images/${selectedValue}.svg`; 
-    previewImageBack.src = newImageSrc;  gambar
+const colorProperties = {
+  Silver: '#c0c0c0',
+  Black: 'black',
+  Gold: '#ffd700',
+  Rose: '#ff007f',
+  Gunmetal: '#53565A',
+  Rainbow: 'rainbow',  
+};
+
+colorOptions.forEach((clrOption) => {
+  clrOption.addEventListener('change', () => {
+    const selectedColor = clrOption.value; 
+    const color = colorProperties[selectedColor];
+
+    if (color === 'rainbow') {
+      borderImgFrontContainer.style.border = 'none';
+      borderImgBackContainer.style.border = 'none';
+      borderImgFrontContainer.classList.add('rainbowBorder');
+      borderImgBackContainer.classList.add('rainbowBorder');
+    } else {
+      borderImgFrontContainer.style.border = `4px solid ${color}`;
+      borderImgBackContainer.style.border = `4px solid ${color}`;
+      borderImgFrontContainer.classList.remove('rainbowBorder');
+      borderImgBackContainer.classList.remove('rainbowBorder');
+    }
   });
 });
 
@@ -101,9 +152,7 @@ radioButtonsBack.forEach((radio) => {
 
 // backside option
 const dropdownBtns = document.querySelectorAll('.dropdown-container label'); 
-const targetDivs = document.querySelectorAll('.backsideoption');
-console.log(dropdownBtns);
-console.log(radioButtons);
+const targetDivs = document.querySelectorAll('.backsideoption'); 
 
 dropdownBtns.forEach((dropdown) => { 
     dropdown.addEventListener('click', () => {

@@ -569,12 +569,15 @@ input[type="radio"]:checked + .color-circle {
     z-index: 10;
 }
 
-#previewImageFront{
+#previewImageFront,
+#previewImageBack{
     display: none;
 }
-
-#previewImageFront.active{
+ 
+#previewImageFront.active,
+#previewImageBack.active{
     display: block;
+    z-index: 10;
 }
 
 .imageFrontBackContainer{
@@ -608,6 +611,7 @@ input[type="radio"]:checked + .color-circle {
     -o-border-radius: 10px;
 }
 
+.imageBack.sameFront .imageFrontBackContainer img,
 .imageFront .imageFrontBackContainer img{
     height: 110%;
     left: -10px;
@@ -620,10 +624,51 @@ input[type="radio"]:checked + .color-circle {
     object-fit: contain;  
 }
 
+/* .imageBack.sameFront.imageFrontBackContainer img{
+    height: auto;
+    width: 100%;
+    object-fit: contain;  
+} */
+
+
+.imageFrontBackContainer::before{
+    content: "";
+    width: 210%;
+    height: 210%;
+    position: absolute;
+
+    z-index: 0;
+    background: linear-gradient(267.49deg, #9400D3 -16.28%, #4B0082 3.62%, #0000FF 26.73%, #00FF00 47.28%, #FFFF00 67.82%, #FF7F00 91.57%, #FF0000 112.12%);
+    display: none;
+}
+
+.imageFrontBackContainer .bgImageClr{
+    background-color: #FEC20A;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit; 
+}
+
+
+.imageFrontBackContainer.rainbowBorder .bgImageClr{
+    width: 98.7%;
+    height: 96.5%;
+}
+
+.imageFrontBackContainer.rainbowBorder::before{
+    display: block;
+}
+
 .imageText{
     font-size: 56px;
     position: relative;
-    z-index: 9;
+    z-index: 19;
     font-family: 'CharlesWright', sans-serif;
 }
 
@@ -648,6 +693,8 @@ input[type="radio"]:checked + .color-circle {
     -moz-border-radius: 9px;
     -ms-border-radius: 9px;
     -o-border-radius: 9px;
+
+    border: 2px solid rgb(209, 209, 209);
 }
 
 .imageChoiseContainer .imageChoise img{
