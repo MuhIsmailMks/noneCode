@@ -170,15 +170,12 @@ const output = document.querySelector('.imageBack #imageText');
 let maxFontSize = 56;  
 const minFontSize = 1;  
 
-// Function untuk mengupdate maxFontSize berdasarkan ukuran layar
 function updateMaxFontSize() {
   maxFontSize = window.innerWidth < 1000 ? 30 : 56;
 }
 
-// Jalankan saat halaman dimuat
 updateMaxFontSize();
 
-// Perbarui maxFontSize jika ukuran layar berubah
 window.addEventListener('resize', updateMaxFontSize);
 
 textarea.addEventListener('input', function() {
