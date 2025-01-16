@@ -112,9 +112,6 @@ radioButtons.forEach((radio) => {
   });
 });
 
-
-
-
 // border key
 const colorOptions = document.querySelectorAll('input[name="keyring-color"]');
 const borderImgFrontContainer = document.querySelector('.imageFront .imageFrontBackContainer'); 
@@ -158,14 +155,38 @@ dropdownBtns.forEach((dropdown) => {
     dropdown.addEventListener('click', () => {
         const valueOnput = dropdown.querySelector('input');
         const selectedValue = valueOnput.value;
-      
+       console.log(selectedValue);
+       
         targetDivs.forEach((div) => {
             div.classList.remove('active');
-        });
+        }); 
+
+        // if click same front
+        if(selectedValue === 'sameAsFront'){ 
+          imageBack.classList.add('sameFront');
+
+          // follow the front
+          previewImageBack.src = previewImageFront.src 
+          const bgColor = getComputedStyle(previewImageFrontContainer).backgroundColor;
+          const textFront = imageFrontText.textContent
+          
+          previewImageBackContainer.style.backgroundColor = bgColor;
+          imageBackText.innerHTML = textFront;
+
+          document.querySelectorAll(`.${selectedValue}, .${selectedValue}.backsideoption`).forEach((element) => {
+            element.classList.remove('active');
+           });
+        }
          
         document.querySelectorAll(`.${selectedValue}, .${selectedValue}.backsideoption`).forEach((element) => {
             element.classList.add('active');
+            if (selectedValue !== 'sameFront') {
+              imageBack.classList.remove('sameFront');
+            }
+
+        
         });
+
     });
 });
  
