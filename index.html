@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./static/css/style.css" />
+    <!-- Tambahkan CSS Swiper -->
+<!-- <link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/> -->
     <title>Document</title>
   </head>
   <body>
@@ -145,7 +150,7 @@
           <div class="optionFrontSide flex_alignCenter Xsmallgap">
 
             <div class="front-option" >
-              <input type="radio" id="front1" name="front-style" value="front1">
+              <input type="radio" id="front1" name="front-style" class="yellow" value="front1">
               <label for="front1"> 
                 <img src="./static/images/front1.svg" alt="frontImage">
               </label> 
@@ -153,7 +158,7 @@
             </div> 
 
             <div class="front-option" >
-              <input type="radio" id="front2" name="front-style" value="front2">
+              <input type="radio" id="front2" name="front-style" class="white" value="front2">
               <label for="front2"> 
                 <img src="./static/images/front2.svg" alt="frontImage">
               </label> 
@@ -161,7 +166,7 @@
             </div> 
 
             <div class="front-option" >
-              <input type="radio" id="front3" name="front-style" value="front3">
+              <input type="radio" id="front3" name="front-style" class="yellow" value="front3">
               <label for="front3"> 
                 <img src="./static/images/front3.svg" alt="frontImage">
               </label> 
@@ -169,7 +174,7 @@
             </div> 
 
             <div class="front-option" >
-              <input type="radio" id="front4" name="front-style" value="front4">
+              <input type="radio" id="front4" name="front-style" class="white" value="front4">
               <label for="front4"> 
                 <img src="./static/images/front4.svg" alt="frontImage">
               </label> 
@@ -177,7 +182,7 @@
             </div> 
 
             <div class="front-option" >
-              <input type="radio" id="front5" name="front-style" value="front5">
+              <input type="radio" id="front5" name="front-style" class="yellow" value="front5">
               <label for="front5"> 
                 <img src="./static/images/front5.svg" alt="frontImage">
               </label> 
@@ -185,7 +190,7 @@
             </div> 
 
             <div class="front-option" >
-              <input type="radio" id="front6" name="front-style" value="front6">
+              <input type="radio" id="front6" name="front-style" class="white" value="front6">
               <label for="front6"> 
                 <img src="./static/images/front6.svg" alt="frontImage">
               </label> 
@@ -193,7 +198,7 @@
             </div> 
 
             <div class="front-option" >
-              <input type="radio" id="front7" name="front-style" value="front7">
+              <input type="radio" id="front7" name="front-style" class="yellow" value="front7">
               <label for="front7"> 
                 <img src="./static/images/front7.svg" alt="frontImage">
               </label> 
@@ -201,7 +206,7 @@
             </div> 
 
             <div class="front-option" >
-              <input type="radio" id="front8" name="front-style" value="front8">
+              <input type="radio" id="front8" name="front-style" class="white" value="front8">
               <label for="front8"> 
                 <img src="./static/images/front8.svg" alt="frontImage">
               </label> 
@@ -209,7 +214,7 @@
             </div> 
 
             <div class="front-option" >
-              <input type="radio" id="front9" name="front-style" value="front9">
+              <input type="radio" id="front9" name="front-style" class="black" value="front9">
               <label for="front9"> 
                 <img src="./static/images/front9.svg" alt="frontImage">
               </label> 
@@ -217,7 +222,7 @@
             </div> 
 
             <div class="front-option" >
-              <input type="radio" id="front10" name="front-style" value="front10">
+              <input type="radio" id="front10" name="front-style" class="yellow" value="front10">
               <label for="front10"> 
                 <img src="./static/images/front10.svg" alt="frontImage">
               </label> 
@@ -225,7 +230,7 @@
             </div> 
 
             <div class="front-option" >
-              <input type="radio" id="front11" name="front-style" value="front11">
+              <input type="radio" id="front11" name="front-style" class="white" value="front11">
               <label for="front11"> 
                 <img src="./static/images/front11.svg" alt="frontImage">
               </label> 
@@ -236,7 +241,50 @@
 
         </section>
 
-        <section class="back flex_col smallgap">
+        <!-- <section class="back flex_col smallgap">
+        
+        </section> -->
+
+        <section class="backSide dropdown flex_col">
+
+          <h5 class="optionTitle">Back Side Style</h5>
+
+          <div class="flex_between dropBtn">
+            <p class="font_medium textChoise">Same as Front</p>
+            <button class="flex_center" aria-expanded="false">
+              <img src="./static/images/dropIcon.svg" alt="dropIcon" class="dropIcon">
+            </button>
+          </div>
+
+          <div class="dropdown-container flex_col">
+            <label for="sameAsFront">
+              <input type="radio" id="sameAsFront" name="back-style-main" value="sameAsFront" />
+              Same as Front
+          </label>
+          <label for="numberplate">
+              <input type="radio" id="numberplate" name="back-style-main" value="numberplate" />
+              Number Plates
+          </label>
+          <label for="imageUpload">
+              <input type="radio" id="imageUpload" name="back-style-main" value="imageUpload" />
+              Image Upload
+          </label>
+          <label for="textBack">
+              <input type="radio" id="textBack" name="back-style-main" value="textBack" />
+              Text
+          </label>
+          <label for="backsideflag">
+              <input type="radio" id="backsideflag" name="back-style-main" value="backsideflag" />
+              Flags
+          </label>
+          </div>
+
+      
+
+        </section>
+
+        <section class="numberplate flex_col backsideoption  smallgap">
+         
           <h5 class="optionTitle">Back</h5>
           <input
           type="text"
@@ -247,10 +295,11 @@
           maxlength="12" 
           placeholder="Ex. 223411"
        />
+
         </section>
 
-        <section class="backSide flex_col smallgap">
-          <h5 class="optionTitle">Back Side Style</h5>
+        <section class="backsideflag flex_col backsideoption  smallgap">
+          <h5 class="optionTitle">Back Side | Flag</h5>
       
           <div class="optionBackSide flex_alignCenter Xsmallgap">
 
@@ -346,45 +395,7 @@
 
         </section>
 
-        <section class="backSide dropdown flex_col">
-
-          <h5 class="optionTitle">Back Side Style</h5>
-
-          <div class="flex_between dropBtn">
-            <p class="font_medium textChoise">Same as Front</p>
-            <button class="flex_center" aria-expanded="false">
-              <img src="./static/images/dropIcon.svg" alt="dropIcon" class="dropIcon">
-            </button>
-          </div>
-
-          <div class="dropdown-container flex_col">
-            <label>
-              <input type="radio" name="sameAsFront" value="sameAsFront" />
-              Same as Front
-            </label>
-            <label>
-              <input type="radio" name="numberPlate" value="numberPlate" />
-              Number Plate
-            </label>
-            <label>
-              <input type="radio" name="imageUpload" value="imageUpload" />
-              Image Upload
-            </label>
-            <label>
-              <input type="radio" name="text" value="text" />
-              Text
-            </label>
-            <label>
-              <input type="radio" name="flag" value="flag" />
-              Flag
-            </label>
-          </div>
-
-      
-
-        </section>
-
-        <div class="submit-container">
+        <div class="submit-container flex_center">
           <button type="submit" class="font_medium submitBtn">SUBMIT</button>
         </div>
 
@@ -409,11 +420,15 @@
         
         <div class="imagesFrame">
 
+          <div class="imageBgFrame">
+            <img id="imageBgFrame" src="./static/images/bgImage.png" alt="">
+          </div>
+
          <div class="imageFront">
           <h5 class="optionTitle">Front</h5>
           <div class="imageFrontBackContainer">
             <p class="imageText">YOUR REG</p>
-            <img src="" id="previewImageFront" alt="imageFront">
+            <img src="./static/images/front1.svg" id="previewImageFront" alt="imageFront">
           </div>
          </div>
 
@@ -425,33 +440,69 @@
           </div>
          </div>
 
-        </div>
+        </div> 
+        
+        <swiper-container slides-per-view="5"  class="mySwiper imageChoiseContainer">
+          
+          <swiper-slide>
+            <div class="imageChoise">
+              <img src="./static/images/carPlate1.png" alt="carPlate">
+            </div>
+          </swiper-slide> 
 
-        <div class="imageChoiseContainer flex_alignCenter">
-          <div class="imageChoise">
-            <img src="./static/images/carPlate1.png" alt="carPlate">
-          </div>
-          <div class="imageChoise">
-            <img src="./static/images/carPlate2.png" alt="carPlate">
-          </div>
-          <div class="imageChoise">
-            <img src="./static/images/carPlate3.png" alt="carPlate">
-          </div>
-          <div class="imageChoise">
-            <img src="./static/images/carPlate4.png" alt="carPlate">
-          </div>
-          <div class="imageChoise">
-            <img src="./static/images/carPlate4.png" alt="carPlate">
-          </div>
-          <div class="imageChoise">
-            <img src="./static/images/carPlate4.png" alt="carPlate">
-          </div>
-        </div>
+          <swiper-slide>
+            <div class="imageChoise">
+              <img src="./static/images/carPlate2.png" alt="carPlate">
+            </div>
+          </swiper-slide> 
+
+          <swiper-slide>
+            <div class="imageChoise">
+              <img src="./static/images/carPlate3.png" alt="carPlate">
+            </div>
+          </swiper-slide> 
+
+          <swiper-slide>
+            <div class="imageChoise">
+              <img src="./static/images/carPlate4.png" alt="carPlate">
+            </div>
+          </swiper-slide> 
+
+          <swiper-slide>
+            <div class="imageChoise">
+              <img src="./static/images/carPlate4.png" alt="carPlate">
+            </div>
+          </swiper-slide> 
+
+          <swiper-slide>
+            <div class="imageChoise">
+              <img src="./static/images/carPlate1.png" alt="carPlate">
+            </div>
+          </swiper-slide> 
+
+          <swiper-slide>
+            <div class="imageChoise">
+              <img src="./static/images/carPlate2.png" alt="carPlate">
+            </div>
+          </swiper-slide> 
+
+          <swiper-slide>
+            <div class="imageChoise">
+              <img src="./static/images/carPlate3.png" alt="carPlate">
+            </div>
+          </swiper-slide> 
+ 
+
+        </swiper-container>
 
       </div>
 
     </div>
-
+    
+    <!-- Tambahkan JS Swiper -->
+     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="./static/js/index.js"></script>
+    <script src="./static/js/swiper.js"></script>
   </body>
 </html>
