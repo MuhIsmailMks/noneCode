@@ -203,7 +203,7 @@ dropdownBtns.forEach((dropdown) => {
         // if click same front
         if(selectedValue === 'sameAsFront'){ 
           imageBack.classList.add('sameFront');
-
+          previewImageBack.classList.remove('active')
           // follow the front
           previewImageBack.src = previewImageFront.src 
           const bgColor = getComputedStyle(previewImageFrontContainer).backgroundColor;
@@ -231,10 +231,15 @@ dropdownBtns.forEach((dropdown) => {
         // all div
         document.querySelectorAll(`.${selectedValue}, .${selectedValue}.backsideoption`).forEach((element) => {
             element.classList.add('active');
+            
             if (selectedValue !== 'sameFront') {
               imageBack.classList.remove('sameFront');
             }
+        
 
+            if (selectedValue === 'textBack') {
+              previewImageBack.classList.remove('active');
+            }
         
         });
 
